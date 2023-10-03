@@ -1,0 +1,29 @@
+node {
+    def mavenHome = tool name: 'maven 3.9.4'
+
+   stage('checkout code')
+{
+git branch: 'development', credentialsId: '192686a1-2130-44f8-9582-25c3279883c8', url: 'https://github.com/uselessbank/maven-web-application.git'
+}
+stage('build')
+{
+    sh "${mavenHome}/bin/mvn clean package"
+}
+stage('execute soanrqubereport')
+{
+    sh "${mavenHome}/bin/mvn sonar:sonar"
+}
+// upload artifact into nexus
+stage('upload artifact into nexus')
+{
+   sh "${mavenHome}/bin/mvn deploy"  
+}
+//tomcat
+stage('tomcat deployment')
+{
+   sshagent(['0eb5309a-fd0d-4ac3-866c-87595ae636b4'])
+     {
+    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.41.48:/opt/apache-tomcat-9.0.80/webapps/" 
+}
+}
+}
