@@ -103,7 +103,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository</name>
-	      <url>http://172.31.22.191:8081/repository/uselessbankapp/</url>
+	      <url>http://172.31.22.191:8081/repository/useless-snapshot/</url>
 	   </snapshotRepository>
 	    
 	</distributionManagement>
