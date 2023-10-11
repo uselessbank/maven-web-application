@@ -1,0 +1,24 @@
+node {
+    
+    def mavenHome = tool name: 'maven 3.9.5'
+    
+      stage('checkoutstage')
+    {
+        git branch: 'development', credentialsId: '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', url: 'https://github.com/uselessbank/maven-web-application.git'
+           } //stage closing
+    
+    stage('build')
+    {
+        sh "${mavenHome}/bin/mvn clean package"
+    }
+    stage('execute soanrqubereport')
+{
+    sh "${mavenHome}/bin/mvn sonar:sonar"
+}
+// upload artifact into nexus
+stage('upload artifact into nexus')
+{
+   sh "${mavenHome}/bin/mvn deploy"  
+}
+    
+    } //node closing
