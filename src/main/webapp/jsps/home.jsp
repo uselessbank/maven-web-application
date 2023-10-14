@@ -9,8 +9,8 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Techpragna </h1>
-<h1 align="center"> New Batch will be start in october 11th  at 7.30 PM IST - Contact 9980923226/9980923216 or devopstrainingblr@gmail.com</h1> 
+<h1 align="center">Welcome to IIHT,Bangalore </h1>
+<h1 align="center"> New Batch will be start in october 18th at 7.30 PM IST - Contact 9980923226/9980923216 or devopstrainingblr@gmail.com</h1> 
 <h1 align="center"> Tech pragna- Very Good Training center for DevOps with AWS in Bangalore India and also for Job Assitance Job Support also...Teaching Real Time scnerios</h1>
 <hr>
 <br>
