@@ -1,0 +1,25 @@
+node {
+    def mavenHome = tool name: 'maven 3.9.5'
+    properties([pipelineTriggers([cron('*  * *  * *')])])
+   
+    stage('checkout code') {
+        git branch: 'development', credentialsId: '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', url: 'https://github.com/uselessbank/maven-web-application.git'
+    } //gitstage
+    stage('build stage'){
+        sh "${mavenHome}/bin/mvn clean package"
+    } // build 
+    // execute sonarqube
+    stage('execute sonarqube') {
+        sh "${mavenHome}/bin/mvn sonar:sonar"
+    } //sonar stage
+    // upload into artifact
+    stage('upload into artifact')  {
+    sh "${mavenHome}/bin/mvn deploy"
+          }  //nexus closing
+          stage('tomcat') {
+              sshagent(['8e3a2992-21e1-4a2c-8e95-5bcd0090f8f2']) {
+   sh "scp -o strictHostkeyChecking=no target/maven-web-application.war ec2-user@172.31.19.60:/opt/apache-tomcat-9.0.80/webapps/"
+
+}
+          }
+} //node closing
