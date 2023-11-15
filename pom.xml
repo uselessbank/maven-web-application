@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://172.31.22.191:8081/repository/uselessbank-release/</url>
+	      <url>http://172.31.34.237:8081/repository/uselessbank-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository</name>
-	      <url>http://172.31.22.191:8081/repository/useless-snapshot/</url>
+	      <url>http://172.31.34.237:8081/repository/useless-snapshot/</url>
 	   </snapshotRepository>
 	    
 	</distributionManagement>
