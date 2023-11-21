@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Welcome to IIHT,Bangalore i triggrer the job by github webhook </h1>
-<h1 align="center"> I added the slack notifications</h1> 
+<h1 align="center"> I added the githubwebhook</h1> 
 <h1 align="center"> I added timestamp,discard project</h1>
 <hr>
 <br>
